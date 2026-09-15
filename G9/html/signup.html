@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+</head>
+<body>
+
+    <main>
+        <!-- Toggle Buttons -->
+        <nav>
+            <a href="login.html">
+                <button type="button">Sign In</button>
+            </a>
+            <button type="button" disabled>Sign Up</button>
+        </nav>
+
+        <hr>
+
+        <!-- Signup Form -->
+        <form action="#" method="POST" id="signupForm">
+            <h2>Sign Up</h2>
+
+            <!-- Username Field -->
+            <div>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <br>
+
+            <!-- Email Field -->
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <br>
+
+            <!-- Password Field -->
+            <div>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <br>
+
+            <!-- Confirm Password Field -->
+            <div>
+                <label for="confirm_password">Confirm Password:</label><br>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <br>
+                <span id="passwordError" style="color: red; display: none;">Passwords do not match.</span>
+            </div>
+
+            <br>
+
+            <!-- Terms and Agreement Checkbox -->
+            <div>
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Agreement</a></label>
+            </div>
+
+            <br>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+    </main>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm_password').value;
+            const errorSpan = document.getElementById('passwordError');
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                errorSpan.style.display = 'inline';
+            } else {
+                errorSpan.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
