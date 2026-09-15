@@ -3,86 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Sign Up — Group 9</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main>
-        <!-- Toggle Buttons -->
-        <nav>
-            <a href="login.html">
-                <button type="button">Sign In</button>
-            </a>
-            <button type="button" disabled>Sign Up</button>
-        </nav>
+    <main class="auth-shell">
 
-        <hr>
-
-        <!-- Signup Form -->
-        <form action="#" method="POST" id="signupForm">
-            <h2>Sign Up</h2>
-
-            <!-- Username Field -->
+        <!-- Left: index card panel -->
+        <section class="auth-panel">
             <div>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required>
+                <span class="entry-no">New entry</span>
+                <h1 class="wordmark">G9</h1>
+                <p class="tagline">Get an entry of your own. Takes less than a minute.</p>
             </div>
+            <p class="stamp">Group 9 · Registration System</p>
+        </section>
 
-            <br>
+        <!-- Right: form -->
+        <section class="auth-form-panel">
+            <div class="auth-form-wrap">
 
-            <!-- Email Field -->
-            <div>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required>
+                <nav class="auth-tabs">
+                    <a href="login.html" class="tab">Sign In</a>
+                    <button type="button" class="tab is-active" disabled>Sign Up</button>
+                </nav>
+
+                <form action="#" method="POST" id="signupForm">
+                    <h2>Create an account</h2>
+                    <p class="auth-subtext">Fill in your details to register.</p>
+
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="confirm_password">Confirm password</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                        <span id="passwordError" class="field-error">Passwords do not match.</span>
+                    </div>
+
+                    <div class="check-row">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Agreement</a></label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Sign up</button>
+                </form>
+
             </div>
+        </section>
 
-            <br>
-
-            <!-- Password Field -->
-            <div>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required>
-            </div>
-
-            <br>
-
-            <!-- Confirm Password Field -->
-            <div>
-                <label for="confirm_password">Confirm Password:</label><br>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-                <br>
-                <span id="passwordError" style="color: red; display: none;">Passwords do not match.</span>
-            </div>
-
-            <br>
-
-            <!-- Terms and Agreement Checkbox -->
-            <div>
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="#">Terms and Agreement</a></label>
-            </div>
-
-            <br>
-
-            <!-- Submit Button -->
-            <div>
-                <button type="submit">Sign Up</button>
-            </div>
-        </form>
     </main>
 
     <script>
         document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm_password').value;
             const errorSpan = document.getElementById('passwordError');
 
             if (password !== confirmPassword) {
-                e.preventDefault();
                 errorSpan.style.display = 'inline';
-            } else {
-                errorSpan.style.display = 'none';
+                return;
             }
+
+            errorSpan.style.display = 'none';
+
+            // TEMPORARY: no backend yet, so this just simulates a
+            // successful registration and moves on to the homepage.
+            // Replace with the real registration call once the
+            // backend is ready.
+            window.location.href = 'homepage.html';
         });
     </script>
 

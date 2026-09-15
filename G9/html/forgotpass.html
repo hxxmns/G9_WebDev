@@ -3,30 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forgot Password</title>
+    <title>Forgot Password — Group 9</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Forgot Password Form -->
-    <form action="#" method="POST">
-        <h2>Forgot Password</h2>
+    <main class="auth-shell">
 
-        <p>Enter the email address linked to your account and we'll send you a link to reset your password.</p>
+        <!-- Left: index card panel -->
+        <section class="auth-panel">
+            <div>
+                <span class="entry-no">Recovery desk</span>
+                <h1 class="wordmark">G9</h1>
+                <p class="tagline">We'll help you find your way back in.</p>
+            </div>
+            <p class="stamp">Group 9 · Registration System</p>
+        </section>
 
-        <!-- Email Field -->
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required>
+        <!-- Right: form -->
+        <section class="auth-form-panel">
+            <div class="auth-form-wrap">
 
-        <br><br>
+                <form action="#" method="POST">
+                    <h2>Forgot password</h2>
+                    <p class="auth-subtext">Enter the email address linked to your account and we'll send you a link to reset your password.</p>
 
-        <!-- Submit Button -->
-        <button type="submit">Send Reset Link</button>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
 
-        <br><br>
+                    <button type="submit" class="btn-submit">Send reset link</button>
 
-        <!-- Back to Sign In -->
-        <a href="login.html">Back to Sign In</a>
-    </form>
+                    <a href="login.html" class="back-link">← Back to sign in</a>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // TEMPORARY: no backend yet, so this just simulates the reset
+        // email being sent and returns to sign in. Replace with the
+        // real request once the backend is ready.
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('If an account exists for that email, a reset link has been sent.');
+            window.location.href = 'login.html';
+        });
+    </script>
 
 </body>
 </html>

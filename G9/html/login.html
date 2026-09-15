@@ -3,70 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Sign In — Group 9</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <main>
-        <!-- Toggle Buttons -->
-        <nav>
-            <button type="button" disabled>Sign In</button>
-            <a href="signup.html">
-                <button type="button">Sign Up</button>
-            </a>
-        </nav>
+    <main class="auth-shell">
 
-        <hr>
-
-        <!-- Login Form -->
-        <form action="#" method="POST">
-            <h2>Sign In</h2>
-
-            <!-- Username Field -->
+        <!-- Left: index card panel -->
+        <section class="auth-panel">
             <div>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required>
+                <span class="entry-no">Entry desk</span>
+                <h1 class="wordmark">G9</h1>
+                <p class="tagline">Welcome back. Your entry's already on file.</p>
             </div>
+            <p class="stamp">Group 9 · Registration System</p>
+        </section>
 
-            <br>
+        <!-- Right: form -->
+        <section class="auth-form-panel">
+            <div class="auth-form-wrap">
 
-            <!-- Password Field -->
-            <div>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required>
+                <nav class="auth-tabs">
+                    <button type="button" class="tab is-active" disabled>Sign In</button>
+                    <a href="signup.html" class="tab">Sign Up</a>
+                </nav>
+
+                <form action="#" method="POST">
+                    <h2>Sign in</h2>
+                    <p class="auth-subtext">Enter your details to access your account.</p>
+
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="row-between">
+                        <label class="check-row" style="margin-bottom:0;">
+                            <input type="checkbox" id="remember" name="remember">
+                            Remember me
+                        </label>
+                        <a href="forgotpass.html">Forgot password?</a>
+                    </div>
+
+                    <div class="check-row">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="#">Terms and Agreement</a></label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Log in</button>
+                </form>
+
             </div>
+        </section>
 
-            <br>
-
-            <!-- Remember Me Checkbox -->
-            <div>
-                <input type="checkbox" id="remember" name="remember">
-                <label for="remember">Remember me</label>
-            </div>
-
-            <br>
-
-            <!-- Forgot Password Link -->
-            <div>
-                <a href="#">Forgot Password?</a>
-            </div>
-
-            <br>
-
-            <!-- Terms and Agreement Link Label -->
-            <div>
-                <input type="checkbox" id="terms" name="terms" required>
-                <label for="terms">I agree to the <a href="#">Terms and Agreement</a></label>
-            </div>
-
-            <br>
-
-            <!-- Submit Button -->
-            <div>
-                <button type="submit">Log In</button>
-            </div>
-        </form>
     </main>
+
+    <script>
+        // TEMPORARY: no backend yet, so this just simulates a successful
+        // login and moves on to the homepage. Replace with the real
+        // auth check once the backend is ready.
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            window.location.href = 'homepage.html';
+        });
+    </script>
 
 </body>
 </html>
