@@ -10,7 +10,6 @@
 
     <main class="auth-shell">
 
-        <!-- Left: index card panel -->
         <section class="auth-panel">
             <div>
                 <span class="entry-no">Recovery desk</span>
@@ -20,7 +19,6 @@
             <p class="stamp">Group 9 · Registration System</p>
         </section>
 
-        <!-- Right: form -->
         <section class="auth-form-panel">
             <div class="auth-form-wrap">
 
@@ -44,9 +42,6 @@
     </main>
 
     <script>
-        // TEMPORARY: no backend yet, so this just simulates the reset
-        // email being sent and returns to sign in. Replace with the
-        // real request once the backend is ready.
         document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('If an account exists for that email, a reset link has been sent.');

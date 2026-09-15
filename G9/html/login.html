@@ -10,7 +10,6 @@
 
     <main class="auth-shell">
 
-        <!-- Left: index card panel -->
         <section class="auth-panel">
             <div>
                 <span class="entry-no">Entry desk</span>
@@ -20,7 +19,6 @@
             <p class="stamp">Group 9 · Registration System</p>
         </section>
 
-        <!-- Right: form -->
         <section class="auth-form-panel">
             <div class="auth-form-wrap">
 
@@ -65,9 +63,6 @@
     </main>
 
     <script>
-        // TEMPORARY: no backend yet, so this just simulates a successful
-        // login and moves on to the homepage. Replace with the real
-        // auth check once the backend is ready.
         document.querySelector('form').addEventListener('submit', function (e) {
             e.preventDefault();
             window.location.href = 'homepage.html';
